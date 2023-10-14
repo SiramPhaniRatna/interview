@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>My Form</title>
+<script>
+function validateform(){
+var fname = document.forms["myform"]["fname"].value;
+var sname = document.forms["myform"]["sname"].value;
+var email = document.forms["myform"]["email"].value;
+
+if(fname == "" || sname== "" || email== "" || phone == ""){
+alert("All fields are mandatory");
+return false;
+}
+var email_pat = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+if(!email.match(email_pat)){
+alert("Please enter a valid email");
+return false;
+}
+if(phone.length!==10){
+alert("Phone no requires 10 dig");
+return false;
+}
+
+
+</script>
+</head>
+<body>
+<h1>Sample Form</h1>
+<form name="myform" action="form.php" method="post" onSubmit="return validateform()">
+<label>First Name</label>
+<input type="text" id="fname"><br>
+<label>Second Name</label>
+<input type="text" id="sname"><br>
+<label>Email</label>
+<input type="text" id="email"><br>
+<label>Phone no</label>
+<input type="text" id="phone"><br>
+<button ype="submit">Submit></button>
+</form>
+
+</body>
+</html>
